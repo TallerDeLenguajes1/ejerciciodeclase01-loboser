@@ -48,7 +48,15 @@ namespace Problema03
 
         static void MostrarAuto(Auto auto)
         {
-            Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            try
+            {
+                Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine("Error de escritura de Objeto de Referencia Nulo: " + ex.Message);
+            }
+
             Console.ReadLine();
         }
     }
